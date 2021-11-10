@@ -24,9 +24,9 @@ const App: React.FC = () => {
   const gameArea = useRef<HTMLDivElement>(null)
 
   const {player, updatePlayerPos, resetPlayer, playerRotate } = usePlayer()
-  const {stage, setStage, rowsCleard} = useStage(player, resetPlayer)
+  const {stage, setStage, rowsCleared} = useStage(player, resetPlayer)
 
-  const {score, setScore, rows, setRows, level, setLevel} = useGameStatus(rowsCleard)
+  const {score, setScore, rows, setRows, level, setLevel} = useGameStatus(rowsCleared)
 
   const movePlayer = (dir: number) => {
     if(!isColliding (player, stage, {x: dir, y:0})){
